@@ -108,7 +108,7 @@ int main() {
         std::println("_____Author: Alexander K_____");
         std::println("_____Git-Hub: Syneation______");
         std::println("____Git-Hub: AlexanderSYN____");
-        std::println("_________Beta Test V1________");
+        std::println("_________Beta Test V1.2________");
     };
     commands["about"] = commands["info"];
 
@@ -455,8 +455,9 @@ int main() {
 
     commands["rename"] = [&](const std::vector<std::string>& args) {
         if (args.size() < 3) {
-            std::print("[SYSTEM] [HINT] You need to write so: rename [old_name] [new_name]");
-            std::print("[SYSTEM] [HINT] ren [old_name] [new_name]\n");
+            std::println("[SYSTEM] [HINT] You need to write so: rename [old_name] [new_name]");
+            std::println("[SYSTEM] [HINT] ren [old_name] [new_name]");
+            std::println("[SYSTEM] [HINT] rnm [old_name] [new_name]");
             return;
         }
 
@@ -467,6 +468,7 @@ int main() {
     };
     commands["ren"] = commands["rename"];
     commands["rn"] = commands["rename"];
+    commands["rnm"] = commands["rename"];
 
     commands["open"] = [&](const std::vector<std::string>& args) {
         if (args.size() <= 1)

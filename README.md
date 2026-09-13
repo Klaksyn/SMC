@@ -322,6 +322,7 @@ mkdir Projects
 
 ```text
 ren <old_name> <new_name>
+rnm <old_name> <new_name>
 rename <old_name> <new_name>
 ```
 

@@ -3,6 +3,7 @@
 //
 #include "../../header/console/help.h"
 #include "../../header/console/color_console.h"
+#include "../../header/helper/IO.hpp"
 
 void help::check_help(const std::vector<std::string>& args) {
     if (args.size() <= 1) {
@@ -41,6 +42,7 @@ void help::check_help(const std::vector<std::string>& args) {
     else if (args[1] == "-f" || args[1] == "--find") help::find();
     else if (args[1] == "-dk" || args[1] == "--disk") help::disk();
     else if (args[1] == "-ex" || args[1] == "--exit") help::exit();
+    else IO::perror("Unknown parameter. Use 'help' without arguments to see available options.");
 }
 
 void help::cmd() {
@@ -152,7 +154,7 @@ void help::fileDir() {
     std::println("File | Folder:");
     std::println("touch (name file).(extension) ... - create file in current path");
     std::println("mkdir name_dir ... - create folder in current path");
-    std::println("ren | rename [old_name] [new_name] - rename file or directory");
+    std::println("ren | rnm | rename [old_name] [new_name] - rename file or directory");
     std::println("del | delete | remove | rmv name ... - delete files or directories");
     std::println("copy | cp [source] [target] - copy from source path to target path");
     std::println("or just: D:\\test>>cp [target] - source path use from current path");
