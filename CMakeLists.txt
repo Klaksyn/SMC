@@ -2,8 +2,15 @@ cmake_minimum_required(VERSION 3.31)
 project(SimpleMiniCommander)
 
 set(CMAKE_CXX_STANDARD 26)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD_REQUIRED OFF)
 
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
+find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets)
+
+add_compile_definitions(__cpp_lib_constexpr_exceptions=0)
 add_executable(SimpleMiniCommander main.cpp
         header/fs/FILEOPEN.h
         header/fs/FILEMAKE.hpp
@@ -54,5 +61,7 @@ add_executable(SimpleMiniCommander main.cpp
         cpp/console/help.cpp
         header/fs/rename.h
         cpp/fs/rename.cpp
+        header/Clipboard/Clipboard.h
+        cpp/Clipboard/Clipboard.cpp
 )
-target_link_libraries(SimpleMiniCommander PRIVATE stdc++exp)
+target_link_libraries(SimpleMiniCommander PRIVATE stdc++exp Qt5::Widgets)

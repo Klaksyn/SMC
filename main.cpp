@@ -22,6 +22,11 @@
 #include "header/fs/Rename.h"
 
 //======================
+// Clipboard
+//======================
+#include "header/Clipboard/Clipboard.h"
+
+//======================
 // text
 //======================
 #include "header/text/io_text.h"
@@ -43,9 +48,7 @@
 //======================
 #include"header/date/date.h"
 
-//======================
-// helper
-//======================
+
 #include "header/fs/COPY.h"
 #include "header/fs/MOVE.h"
 #include "header/helper/helper.h"
@@ -157,6 +160,22 @@ int main() {
                                                      " or path --show?");
         }
     };
+
+    commands["copy-in-clipboard"] = [&](const std::vector<std::string>& args) {
+
+        if (args.size() <= 1) {
+            IO::pwarning("Please write “help” to get acquainted with copying to the clipboard");
+            return;
+        }
+
+        if (args[1] == "--path" || args[1] == "-p") {
+            Clipboard::copy_text(path_ff::get_OPath());
+            return;
+        }
+
+        IO::pwarning("Unknown argument. Use --path or -p");
+    };
+    commands["cpcl"] = commands["copy-in-clipboard"];
 
     commands["history"] = [&](const std::vector<std::string>& args) {
         if (args.size() > 1) {

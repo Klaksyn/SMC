@@ -2,6 +2,7 @@
 // Created by AlexanderSYN on 28.03.2026.
 //
 #include "../../header/helper/path_ff.h"
+
 #include "../../header/helper/helper.h"
 
 fs::path path_ff::path_f = "\\";

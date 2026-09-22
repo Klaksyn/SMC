@@ -368,6 +368,13 @@ cp D:\Backup
 
 ---
 
+To copy your path to the clipboard, you need to write it like this:
+```text
+copy-in-clipboard <param>
+cpcl -p
+```
+---
+
 ## Move
 
 ```text
