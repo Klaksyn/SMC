@@ -58,10 +58,11 @@ void help::cmd() {
 void help::history() {
     std::println("[--------HELP HISTORY--------]");
     std::println("history - show your history");
-    std::println("history [param] | -h-s | --history_search - show a history search");
-    std::println("^[param] - --search | -s^");
-    std::println("history [param] - save your history in txt file");
-    std::println("^[param] --save | -sv^");
+    std::println("history <param>| -h-s | --history_search - show a history search");
+    std::println("param:");
+    std::println("--search | -s - history search");
+    std::println("--save | -sv - save your history in txt file");
+    std::println("-cls | --clear - clear history");
     std::println();
 }
 

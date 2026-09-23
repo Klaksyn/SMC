@@ -210,6 +210,20 @@ int main() {
                         FILEC::create_file_and_record(args[4], args[2], hist_search);
                 }
             }
+            else if (args[1] == "--clear" || args[1] == "-cls") {
+                std::string choice;
+
+                IO::psystem("Are you sure?<y/n> ");
+                std::cin >> choice;
+
+                if (choice == "y" || choice == "Y") {
+                    history.clear();
+                    hist_search.clear();
+                } else {
+                    IO::psystem("Operation canceled!");
+                }
+
+            }
             helper::clear_input_buffer();
         } else
             for (int i = 1; i < history.size(); i++)
